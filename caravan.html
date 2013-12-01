@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Caravan
+        </title>
+		<script type="text/javascript" src="scripts\jquery-1.9.1.min.js" ></script>
+        <script src="scripts\caravan.js"></script>
+		<script src="scripts\image_hover.js"></script>
+		<script src="scripts\tabs.js"></script>
+        <link rel="stylesheet" href="styles\caravan.css"/>
+    </head>
+    <body onload="tabActivate()">
+		<div id="game">
+			<div id="tabBar">
+				<img id="navButton" class="tabButton hoverPop" tab-id="navTab" src="assets\button_nav.png"/>
+				<img id="cargoButton" class="tabButton hoverPop" tab-id="cargoTab" src="assets\button_cargo.png"/>
+				<img id="shipButton" class="tabButton hoverPop" tab-id="shipTab" src="assets\button_ship.png"/>
+			</div>
+			<div id="planet">
+				<img src="assets\planet_01.png"/>
+			</div>
+			<div id="tabContent">
+				<div id="navTab" class="visTab" style="display:inline;">
+					<div class="tabTitle">
+						NAVIGATION
+					</div>
+					<div class="tabInfo">
+						This is the NAV tab. It displays information about what planet you are on, and which are available to travel to from here.
+						You can also see things like local news, current sales on nearby planets, or pirate warnings.
+					</div>
+				</div>
+				<div id="cargoTab" class="hidTab" style="display:none;">
+					<div class="tabTitle">
+						CARGO
+					</div>
+					<div class="tabInfo">
+						This is the CARGO tab. It displays information about what cargo you have in your ship, what goods are available to purchase,
+						and prices at your current location. It also display how much fuel and ammo you have.
+					</div>
+				</div>
+				<div id="shipTab" class="hidTab" style="display:none;">
+					<div class="tabTitle">
+						SHIP
+					</div>
+					<div class="tabInfo">
+						This is the SHIP tab. It displays information about your ship, such as your engines and weapons. It is also where you can purchase
+						upgrades for your cargo, comm array, weapons, defenses, engines, etc.
+					</div>
+				</div>
+				<div id="event">
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
