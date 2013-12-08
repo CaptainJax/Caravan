@@ -35,20 +35,63 @@
 						CARGO
 					</div>
 					<div class="tabInfo">
-						This is the CARGO tab. It displays information about what cargo you have in your ship, what goods are available to purchase,
-						and prices at your current location. It also display how much fuel and ammo you have.
-					</div>
-				</div>
-				<div id="shipTab" class="hidTab" style="display:none;">
-					<div class="tabTitle">
-						SHIP
-					</div>
-					<div class="tabInfo">
-						This is the SHIP tab. It displays information about your ship, such as your engines and weapons. It is also where you can purchase
-						upgrades for your cargo, comm array, weapons, defenses, engines, etc.
-					</div>
-				</div>
-				<div id="event">
+                        <div id="cargoStatus">
+                            <img src="assets\cargo_TEMP.png" title="Current Cargo"/><br/>
+                            <div id="currentCargo">100/100</div>
+                        </div>
+                        <div id="fuelStatus">
+                            <img src="assets\fuel_TEMP.jpg" title="Current Fuel"/><br/>
+                            <div id="currentFuel">140/150</div>
+                        </div>
+                        <div id="ammoStatus">
+                            <img src="assets\ammo_TEMP.jpg" title="Current Ammo"/><br/>
+                            <div id="currentAmmo">130/130</div>
+                        </div>
+                        </div>
+                        <div id="cargoStore">                            
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cargo:
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sell:
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buy:                            
+                            <div id="aaEntry">
+                                <img src="assets\alienartifacts_TEMP.png" width="64px" height="64px" title="Alien Artifacts"/>
+                                <div id="currentAA">x24</div>
+                                <button class="sell">$16</button><button class="buy">$65</button>
+                            </div>
+                            <div id="pmEntry">
+                                <img src="assets\preciousmetals_TEMP.png" width="64px" height="64px" title="Precious Metals"/>
+                                <div id="currentPM">x55</div>
+                                <button class="sell">$211</button><button class="buy">$650</button>
+                            </div>
+                            <div id="ffEntry">
+                                <img src="assets\freshfoods_TEMP.png" width="64px" height="64px" title="Fresh Foods"/>
+                                <div id="currentFF">x0</div>
+                                <button class="sell">$6</button><button class="buy">$15</button>
+                            </div>
+                            <div id="rwEntry">
+                                <img src="assets\radioactivewaste_TEMP.png" width="64px" height="64px" title="Radioactive Waste"/>
+                                <div id="currentRW">x31</div>
+                                <button class="sell">$1</button><button class="buy">$19</button>
+                            </div>     
+                            <div id="fuelBuy">
+                                <img src="assets\fuel_TEMP.jpg" title="Fuel"/>
+                                <button class="buy">$50</button>
+                            </div>
+                            <div id="ammoBuy">
+                                <img src="assets\ammo_TEMP.jpg" title="Ammo"/>
+                                <button class="buy">$50</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="shipTab" class="hidTab" style="display:none;">
+                        <div class="tabTitle">
+                            SHIP
+                        </div>
+                        <div class="tabInfo">
+                            This is the SHIP tab. It displays information about your ship, such as your engines and weapons. It is also where you can purchase
+                            upgrades for your cargo, comm array, weapons, defenses, engines, etc.
+                        </div>
+                    </div>
+                    <div id="event">
 				</div>
 			</div>
 		</div>

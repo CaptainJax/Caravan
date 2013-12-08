@@ -9,7 +9,10 @@ body {
 	background-position:center top;
 	width: 100%;
 	text-align: center;
-	overflow: hidden;
+}
+
+img {
+	border: 0;
 }
 
 #game {
@@ -46,35 +49,172 @@ body {
 
 #tabContent div {
 	display: inline-block;
-	overflow: hidden;
 }
 
 #navTab {
 	position: absolute;
-	top: 100px;
+	top: 0px;
 	left: 20%;
 	width: 60%;
-	height: 600px;
+	height: 700px;
 	background-image: url('small_tile.png');
 	background-repeat: repeat;
 }
 
 #cargoTab {
 	position: absolute;
-	top: 100px;
+	top: 0px;
 	left: 20%;
 	width: 60%;
-	height: 600px;
+	height: 700px;
 	background-image: url('small_tile.png');
 	background-repeat: repeat;
 }
 
+#cargoStatus {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline;
+    width: 33%;
+    text-align: center;
+    font-size: 24px;
+}
+
+#cargoStatus img {
+    position: relative;
+    widht: 64px;
+    height: 64px;
+}
+
+#fuelStatus {
+    position: absolute;
+    top: 0px;
+    left: 33%;
+    display: inline;
+    width: 33%;
+    text-align: center;
+    font-size: 24px;
+}
+
+#fuelStatus img{
+    position: relative;
+    widht: 64px;
+    height: 64px;
+}
+
+#ammoStatus {
+    position: absolute;
+    top: 0px;
+    left: 66%;
+    display: inline;
+    width: 33%;
+    text-align: center;
+    font-size: 24px;
+}
+
+#ammoStatus img{
+    position: relative;
+    widht: 64px;
+    height: 64px;
+}
+
+#cargoStore {
+    position: relative;
+    top: 180px;
+    text-align: left;
+    width: 100%;
+}
+
+#cargoStore img {
+    position: relative;
+    left: 30px;
+    height: 64px;
+    width: 64px;
+}
+
+.sell {
+    position: absolute;
+    left: 250px;
+    bottom: 23px;
+    width: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.buy {
+    position: absolute;
+    left: 425px;
+    bottom: 23px;
+    width: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#aaEntry {
+    position: relative;
+    width: 100%;
+}
+
+#aaEntry #currentAA {
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
+}
+
+#pmEntry {
+    position: relative;
+    width: 100%;
+}
+
+#pmEntry #currentPM {
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
+}
+
+#ffEntry {
+    position: relative;
+    width: 100%;
+}
+
+#ffEntry #currentFF {
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
+}
+
+#rwEntry {
+    position: relative;
+    width: 100%;
+}
+
+#rwEntry #currentRW {
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
+}
+
+#fuelBuy {
+    position: relative;
+    width: 100%;
+}
+
+#ammoBuy {
+    position: relative;
+    width: 100%;
+}
+
 #shipTab {
 	position: absolute;
-	top: 100px;
+	top: 0px;
 	left: 20%;
 	width: 60%;
-	height: 600px;
+	height: 700px;
 	background-image: url('small_tile.png');
 	background-repeat: repeat;
 }
