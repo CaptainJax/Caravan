@@ -27,26 +27,40 @@ var parms = {
                 demandAdj: 0.03, // Price change based on quantity on hand and available space.
                 prodRate: 0.1,   // Production per turn.
             },
-            tools: {
+            metal: {
                 initialQuant: 0,
                 capacity: 50,
                 basePrice: 50,
                 demandAdj: 0.1,
                 prodRate: 0.03,
             },
-            toys: {
+            waste: {
                 initialQuant: 0,
-                capacity: 20,
+                capacity: 200,
                 basePrice: 1,
                 demandAdj: 0.7,
-                prodRate: 0.3,
+                prodRate: 0.5,
+            },
+            artifacts: {
+                initialQuant: 0,
+                capacity: 10,
+                basePrice: 100,
+                demandAdj: 2,
+                prodRate: 0.01,
             },
             fuel: {
-                initialQuant: 0, // Set by init.
-                capacity: 20,
-                basePrice: 20,
+                initialQuant: 10, // Set by init.
+                capacity: 500,
+                basePrice: 50,
                 demandAdj: 0.1,
-                prodRate: 0.05,
+                prodRate: 5,
+            },
+            ammo: {
+                initialQuant: 50, // Set by init.
+                capacity: 500,
+                basePrice: 50,
+                demandAdj: 0.1,
+                prodRate: 5,
             },
     },
   

@@ -1,74 +1,176 @@
 body {
     font-size: 20px;
-	font-family: "Arial Black", Gadget, sans-serif;
-	color: white;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: white;
     background-color: black;
     background-image: url('background_01.jpg');
     background-repeat: repeat;
-	background-attachment: fixed;
-	background-position:center top;
-	width: 100%;
-	text-align: center;
+    background-attachment: fixed;
+    background-position:center top;
+    width: 100%;
+    text-align: center;
 }
 
 img {
-	border: 0;
+    border: 0;
 }
 
 #game {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1080px;
+    overflow: hidden;
+}
+
+#hud {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    min-width: 1200px;
+    width: 100%;
 }
 
 #tabBar {
-	position: relative;
-	width: 880px;
-	height: 150px;
+    position: relative;
+    width: 1200px;
+    height: 200px;
+    margin: 0px auto;
+}
+
+#cargo {
+    position: absolute;
+    font-size: 24px;
+    color: #50EBEC;
+    top: 0px;
+    right: 0px;
+    height: 100px;
+    width: 200px;
+    margin: 0px auto;
+}
+
+#cargo img {
+    position: relative;
+    top: 24px;
+    height: 64px;
+    width: 64px;
+}
+
+#money {
+    position: absolute;
+    font-size: 24px;
+    color: #50EBEC;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 200px;
+    margin: 0px auto; 
+}
+
+#money img {
+    position: relative;
+    top: 24px;
+    height: 64px;
+    width: 64px;
+}
+
+#location {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+	margin: 0px auto;
+    margin-top: 0px;
+}
+
+#hud #navPoint1 {
+    position: absolute;
+    top: -180px;
+    left: -320px;
+    height: 512px;
+    width: 256px;
 	margin: 0px auto;
 }
 
-#planet {
-	width: 100%;
-	height: 1000px;
-	position: relative;
-	overflow: hidden;
-	z-index: 1;
+#navPoint1 img {
+    height: 256px;
+    width: 256px;
+}
+
+#navPoint2 {
+    position: absolute;  
+    top: -180px;
+    right: -320px;
+    height: 512px;
+    width: 256px;
+	margin: 0px auto;
+}
+
+#navPoint2 img {
+    height: 256px;
+    width: 256px;
+}
+
+#navPoint3 {
+    position: absolute;
+    top: 332px;
+    left: -320px;
+    height: 512px;
+    width: 256px;
+	margin: 0px auto;
+}
+
+#navPoint3 img {
+    height: 256px;
+    width: 256px;
+}
+
+#navPoint4 {
+    position: absolute;
+    top: 332px;
+    right: -320px;
+    height: 512px;
+    width: 256px;
+	margin: 0px auto;
+}
+
+#navPoint4 img {
+    height: 256px;
+    width: 256px;
 }
 
 #tabContent {
-	position: relative;
-	margin: 0px auto;
-	bottom: 1000px;
-	width: 1000px;
-	height: 1000px;
-	overflow: hidden;
-	z-index: 1000;
+    position: relative;
+    margin: 0px auto;
+    bottom: 1000px;
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 #tabContent div {
-	display: inline-block;
+    display: inline-block;
 }
 
 #navTab {
-	position: absolute;
-	top: 0px;
-	left: 20%;
-	width: 60%;
-	height: 700px;
-	background-image: url('small_tile.png');
-	background-repeat: repeat;
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    width: 60%;
+    height: 700px;
+    background-image: url('small_tile.png');
+    background-repeat: repeat;
 }
 
 #cargoTab {
-	position: absolute;
-	top: 0px;
-	left: 20%;
-	width: 60%;
-	height: 700px;
-	background-image: url('small_tile.png');
-	background-repeat: repeat;
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    width: 60%;
+    height: 700px;
+    background-image: url('small_tile.png');
+    background-repeat: repeat;
 }
 
 #cargoStatus {
@@ -99,7 +201,7 @@ img {
 
 #fuelStatus img{
     position: relative;
-    widht: 64px;
+    width: 64px;
     height: 64px;
 }
 
@@ -115,7 +217,7 @@ img {
 
 #ammoStatus img{
     position: relative;
-    widht: 64px;
+    width: 64px;
     height: 64px;
 }
 
@@ -199,50 +301,64 @@ img {
     font-size: 24px;
 }
 
-#fuelBuy {
+#fuelEntry {
     position: relative;
     width: 100%;
 }
 
-#ammoBuy {
+#fuelEntry #currentFUEL{
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
+}
+
+#ammoEntry {
     position: relative;
     width: 100%;
+}
+
+#ammoEntry #currentAMMO{
+    position: relative;
+    left: 30px;
+    bottom: 25px;
+    font-size: 24px;
 }
 
 #shipTab {
-	position: absolute;
-	top: 0px;
-	left: 20%;
-	width: 60%;
-	height: 700px;
-	background-image: url('small_tile.png');
-	background-repeat: repeat;
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    width: 60%;
+    height: 700px;
+    background-image: url('small_tile.png');
+    background-repeat: repeat;
 }
 
 #event {
-	position: relative;
+    position: relative;
 }
 
 img.hoverPop {
-	cursor: pointer;
-	z-index: 1000;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 .tabTitle {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	font-size: 40px;
-	text-align: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
 }
 
 .tabInfo {
-	position: absolute;
-	top: 60px;
-	left: 5%;
-	width: 90%;
-	text-align: left;
+    position: absolute;
+    top: 60px;
+    left: 5%;
+    width: 90%;
+    text-align: left;
 }
 
 .hidTab{

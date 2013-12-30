@@ -4,96 +4,116 @@
         <title>
             Caravan
         </title>
-		<script type="text/javascript" src="scripts\jquery-1.9.1.min.js" ></script>
+        <script type="text/javascript" src="scripts\jquery-1.9.1.min.js" ></script>
         <script src="scripts\caravan.js"></script>
-		<script src="scripts\image_hover.js"></script>
-		<script src="scripts\tabs.js"></script>
+        <script src="scripts\image_hover.js"></script>
+        <script src="scripts\tabs.js"></script>
         <link rel="stylesheet" href="styles\caravan.css"/>
     </head>
     <body onload="tabActivate()">
-		<div id="game">
-			<div id="tabBar">
-				<img id="navButton" class="tabButton hoverPop" tab-id="navTab" src="assets\button_nav.png"/>
-				<img id="cargoButton" class="tabButton hoverPop" tab-id="cargoTab" src="assets\button_cargo.png"/>
-				<img id="shipButton" class="tabButton hoverPop" tab-id="shipTab" src="assets\button_ship.png"/>
-			</div>
-			<div id="planet">
-				<img src="assets\planet_01.png"/>
-			</div>
-			<div id="tabContent">
-				<div id="navTab" class="visTab" style="display:inline;">
-					<div class="tabTitle">
-						NAVIGATION
-					</div>
-					<div class="tabInfo">
-						This is the NAV tab. It displays information about what planet you are on, and which are available to travel to from here.
-						You can also see things like local news, current sales on nearby planets, or pirate warnings.
-					</div>
-				</div>
-				<div id="cargoTab" class="hidTab" style="display:none;">
-					<div class="tabTitle">
-						CARGO
-					</div>
-					<div class="tabInfo">
-                        <div id="cargoStatus">
-                            <img src="assets\cargo_TEMP.png" title="Current Cargo"/><br/>
-                            <div id="currentCargo">100/100</div>
+        <div id="game">
+            <div id="hud">
+                <div id="tabBar">
+                    <div id="cargo"><img src="assets\cargo_TEMP.png" title="Current Cargo"/><br/><br/>10 / 100</div>
+                    <img id="navButton" class="tabButton hoverPop" tab-id="navTab" src="assets\button_nav.png"/>
+                    <img id="cargoButton" class="tabButton hoverPop" tab-id="cargoTab" src="assets\button_cargo.png"/>
+                    <img id="shipButton" class="tabButton hoverPop" tab-id="shipTab" src="assets\button_ship.png"/>
+                    <div id="money"><img src="assets\money_TEMP.png" title="Current Money"/><br/><br/>$1000</div>
+                </div>
+                <div id="location">
+                    <img src="assets\planet_01.png"/>
+                    <div id="navPoints">
+                        <div id="navPoint1"><img src="assets\planet_02.png" title="Planet 02"/>
+                            <div id="navPoint1Name">Planet 2</div>
                         </div>
-                        <div id="fuelStatus">
-                            <img src="assets\fuel_TEMP.png" title="Current Fuel"/><br/>
-                            <div id="currentFuel">140/150</div>
+                        <div id="navPoint2"><img src="assets\planet_01.png" title="Planet 03"/>
+                            <div id="navPoint2Name">Planet 3</div>
                         </div>
-                        <div id="ammoStatus">
-                            <img src="assets\ammo_TEMP.png" title="Current Ammo"/><br/>
-                            <div id="currentAmmo">130/130</div>
+                        <div id="navPoint3"><img src="assets\planet_01.png" title="Planet 04"/>
+                            <div id="navPoint3Name">Planet 4</div>
                         </div>
-                        </div>
-                        <div id="cargoStore">                            
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cargo:
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sell:
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buy:                            
-                            <div id="aaEntry">
-                                <img src="assets\alienartifacts_TEMP.png" width="64px" height="64px" title="Alien Artifacts"/>
-                                <div id="currentAA">x24</div>
-                                <button class="sell">$16</button><button class="buy">$65</button>
-                            </div>
-                            <div id="pmEntry">
-                                <img src="assets\preciousmetals_TEMP.png" width="64px" height="64px" title="Precious Metals"/>
-                                <div id="currentPM">x55</div>
-                                <button class="sell">$211</button><button class="buy">$650</button>
-                            </div>
-                            <div id="ffEntry">
-                                <img src="assets\freshfoods_TEMP.png" width="64px" height="64px" title="Fresh Foods"/>
-                                <div id="currentFF">x0</div>
-                                <button class="sell">$6</button><button class="buy">$15</button>
-                            </div>
-                            <div id="rwEntry">
-                                <img src="assets\radioactivewaste_TEMP.png" width="64px" height="64px" title="Radioactive Waste"/>
-                                <div id="currentRW">x31</div>
-                                <button class="sell">$1</button><button class="buy">$19</button>
-                            </div>     
-                            <div id="fuelBuy">
-                                <img src="assets\fuel_TEMP.png" title="Fuel"/>
-                                <button class="buy">$50</button>
-                            </div>
-                            <div id="ammoBuy">
-                                <img src="assets\ammo_TEMP.png" title="Ammo"/>
-                                <button class="buy">$50</button>
-                            </div>
+                        <div id="navPoint4"><img src="assets\planet_02.png" title="Planet 05"/>
+                            <div id="navPoint4Name">Planet 5</div>
                         </div>
                     </div>
-                    <div id="shipTab" class="hidTab" style="display:none;">
-                        <div class="tabTitle">
-                            SHIP
+                    <div id="tabContent">
+                        <div id="navTab" class="visTab" style="display:inline;">
+                            <div class="tabTitle">
+                                NAVIGATION
+                            </div>
+                            <div class="tabInfo">
+                                This is the NAV tab. It displays information about what planet you are on, and which are available to travel to from here.
+                                You can also see things like local news, current sales on nearby planets, or pirate warnings.
+                            </div>
+                            </div>
+                            <div id="cargoTab" class="hidTab" style="display:none;">
+                            <div class="tabTitle">
+                                CARGO
+                            </div>
+                            <div class="tabInfo">
+                                <div id="cargoStatus">
+                                    <img src="assets\cargo_TEMP.png" title="Current Cargo"/><br/>
+                                    <div id="currentCargo">10/100</div>
+                                </div>
+                                <div id="fuelStatus">
+                                    <img src="assets\fuel_TEMP.png" title="Current Fuel"/><br/>
+                                    <div id="currentFuel">10</div>
+                                </div>
+                                <div id="ammoStatus">
+                                    <img src="assets\ammo_TEMP.png" title="Current Ammo"/><br/>
+                                    <div id="currentAmmo">50</div>
+                                </div>
+                            </div>
+                            <div id="cargoStore">                            
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cargo:
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Sell:
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buy:                            
+                                <div id="aaEntry">
+                                    <img src="assets\alienartifacts_TEMP.png" width="64px" height="64px" title="Alien Artifacts"/>
+                                    <div id="currentAA">x0</div>
+                                    <button class="sell">$16</button><button class="buy">$65</button>
+                                </div>
+                                <div id="pmEntry">
+                                    <img src="assets\preciousmetals_TEMP.png" width="64px" height="64px" title="Precious Metals"/>
+                                    <div id="currentPM">x0</div>
+                                    <button class="sell">$211</button><button class="buy">$650</button>
+                                </div>
+                                <div id="ffEntry">
+                                    <img src="assets\freshfoods_TEMP.png" width="64px" height="64px" title="Fresh Foods"/>
+                                    <div id="currentFF">x0</div>
+                                    <button class="sell">$6</button><button class="buy">$15</button>
+                                </div>
+                                <div id="rwEntry">
+                                    <img src="assets\radioactivewaste_TEMP.png" width="64px" height="64px" title="Radioactive Waste"/>
+                                    <div id="currentRW">x0</div>
+                                    <button class="sell">$1</button><button class="buy">$19</button>
+                                </div>     
+                                <div id="fuelEntry">
+                                    <img src="assets\fuel_TEMP.png" title="Fuel"/>								
+                                    <div id="currentFUEL">x10</div>
+                                    <button class="sell">$10</button><button class="buy">$50</button>
+                                </div>
+                                <div id="ammoEntry">
+                                    <img src="assets\ammo_TEMP.png" title="Ammo"/>
+                                    <div id="currentAMMO">x50</div>
+                                    <button class="sell">$10</button><button class="buy">$50</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tabInfo">
-                            This is the SHIP tab. It displays information about your ship, such as your engines and weapons. It is also where you can purchase
-                            upgrades for your cargo, comm array, weapons, defenses, engines, etc.
+                            <div id="shipTab" class="hidTab" style="display:none;">
+                            <div class="tabTitle">
+                                SHIP
+                            </div>
+                            <div class="tabInfo">
+                                This is the SHIP tab. It displays information about your ship, such as your engines and weapons. It is also where you can purchase
+                                upgrades for your cargo, comm array, weapons, defenses, engines, etc.
+                            </div>
                         </div>
-                    </div>
-                    <div id="event">
-				</div>
-			</div>
-		</div>
+                        <div id="event">
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
     </body>
 </html>
