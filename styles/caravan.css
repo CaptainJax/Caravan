@@ -368,3 +368,7 @@ img.hoverPop {
 .visTab {
     display: inline;
 }
+
+img.planet {
+    cursor: pointer;
+}
