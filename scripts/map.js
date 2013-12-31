@@ -22,23 +22,22 @@ var Map = {
 
     canJumpBetween: function (fromWn, toWn) {
         var fw = Map.getWorld(fromWn);
-        //var connected =
+        var exit = World.getExitTo(fw, toWn);
     },
 
     addWorld: function(fromWorldNum, name) {
         var newWorldNum = Map.getNumWorlds();
         name = name || ('Planet ' + newWorldNum);
-        var newWorld = World.makeWorld(name);
-
+        var newWorld = World.new(name);
         // Make new world and plug it into the map.
         if (fromWorldNum != konst.FROM_NOWHERE) {
-            var fromWorld = thisObj.getWorld(fromWorldNum);
+            var fromWorld = this.getWorld(fromWorldNum);
             var dist = randDist(parms.world.exitDistProb);
-            newWorld.addExitTo(fromWorldNum, dist); // Add reciprocol path.
-            fromWorld.addExitTo(newWorldNum, dist);
+            World.addExitTo(newWorld, fromWorldNum, dist); // Add reciprocol path.
+            World.addExitTo(fromWorld, newWorldNum, dist);
             // TODO: add link to existing world?
         }
-        thisObj.worlds.push(newWorld);
+        map.worlds.push(newWorld);
 
         return newWorldNum;
     },
@@ -50,11 +49,13 @@ var Map = {
         // Fill in one or more exits.
         var numExits = randDist(parms.world.numExitsProb);
         if (typeof forcedNumExits === 'number') numExits = forcedNumExits;
-        for (var exitNum = 0; exitNum < numExits ; exitNum++)
+        for (var exitNum = 0; exitNum < numExits; exitNum++)
             Map.addWorld(fromWorldNum);
     },
 
     init: function() {
         map.worlds = [];
+        var hwNum = Map.addWorld(konst.FROM_NOWHERE, parms.world.homeworldName);
+        Map.extendSpaceAround(hwNum, parms.world.maxExits);
     },
 }

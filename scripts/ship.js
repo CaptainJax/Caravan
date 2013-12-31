@@ -16,7 +16,7 @@ var Ship = {
 
     // Try to move the ship to another planet.
     jumpTo: function(toWorldNum) { // Try to jump to another world.
-        var canJump = Ship.canJumpTo(toWorldNum); // Is there a connection?
+        var canJump = this.canJumpTo(toWorldNum); // Is there a connection?
         if (canJump !== true) return canJump;
         var jumpFuelNeeded = Ship.getJumpFuelNeeded(toWorldNum);
         if (jumpFuelNeeded < 0) return jumpFuelNeeded;
@@ -27,7 +27,6 @@ var Ship = {
 
         Map.extendSpaceAround(toWorldNum); // Add more space around the new location.
         Map.getWorld(toWorldNum).visitedTurnNum = ship.turnNum;
-
         UI.updateShipStatus();
 
         return toWorldNum;
@@ -57,6 +56,7 @@ var Ship = {
 
     // Fill in any computed values the ship needs to have.
     init: function() {
+        ship.worldNum = 0;
         for (var c in parms.cargo) // Load up initial cargo.
             ship[c] = parms.cargo[c].initialQuant;
     },

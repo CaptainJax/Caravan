@@ -21,7 +21,7 @@ $(window).load(function() { // All assets must be loaded.
     parms.init();   // The parameters controlling the game.
     Map.init();      // The map of planets.
     Ship.init();     // The player's ship;
-    Ship.jumpTo(0); // Initial location.
+    UI.updateShipStatus();
     //loadGame(); // Get saved state, or just use what we have now.
 });
 

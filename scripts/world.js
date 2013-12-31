@@ -17,6 +17,7 @@ var World = {
 
         for (var c in parms.cargo) {
             var pc = parms.cargo[c];
+            w.market[c] = {};
             w.market[c].capacity = pc.capacity;
             w.market[c].price = pc.basePrice;
         }
