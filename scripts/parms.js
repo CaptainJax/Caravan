@@ -11,14 +11,15 @@ var parms = {
 
         minFuelToJump: 3,    // Just making a jump uses this much, plus the distance.
         jumpFuelRatio: 3.75, // Jump fuel required is dist * ratio (rounded up).
+        numWorldImages: 13, // Number of images for worlds.
     },
-    
+
     ship: {
         initialCash: 1000, // The dough the player starts out with.
         initialCap: 100,     // Initial maximum capacity of cargo hold.
         fuelPercent: 0.5,  // Initially, this much of the hold is fuel (used by init).
     },
-    
+
     cargo: { // This is where what constitues cargo is found.
             food: {
                 initialQuant: 0, // How much in the ship's hold for new game.
@@ -63,11 +64,9 @@ var parms = {
                 prodRate: 5,
             },
     },
-  
+
     init: function() { // Set up any and all computed parameter values.
-        this.cargo.fuel.initialQuant = 
+        this.cargo.fuel.initialQuant =
             Math.round(this.ship.capacity * this.ship.fuelPercent);
     },
 }
-
-

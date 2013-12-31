@@ -16,7 +16,7 @@ var Ship = {
 
     // Try to move the ship to another planet.
     jumpTo: function(toWorldNum) { // Try to jump to another world.
-        var canJump = this.canJumpTo(toWorldNum); // Is there a connection?
+        var canJump = Ship.canJumpTo(toWorldNum); // Is there a connection?
         if (canJump !== true) return canJump;
         var jumpFuelNeeded = Ship.getJumpFuelNeeded(toWorldNum);
         if (jumpFuelNeeded < 0) return jumpFuelNeeded;
@@ -36,23 +36,25 @@ var Ship = {
     // See if the ship can jump somewhere.
     canJumpTo: function(toWorldNum) {
         // See if connection between where ship is and next world.
-        var connected = Map.canJumpBetween(ship.worldNum, toWorldNum);
-        if (connected !== true) return connected;
+        var toWorld = Map.getWorld(ship.worldNum);
+        var exit = World.getExitTo(toWorld, toWorldNum);
+        if (exit == konst.NO_EXIT) return exit;
 
         // See if there is enough fuel.
-        var fuelNeeded = Ship.getJumpFuelNeeded(toWorldNum);
+        var fuelNeeded = Ship.getJumpFuelNeeded(exit.dist);
         if (fuelNeeded < 0) return fuelNeeded;
         if (fuelNeeded > ship.cargo['fuel']) return konst.LOW_FUEL;
         return true;
     },
 
+
     // Determine how much fuel is needed to get from where the ship is to somewhere else.
-    getJumpFuelNeeded: function(toWorldNum) {
-        var dist = Map.getDistance(ship.worldNum, toWorldNum);
+    getJumpFuelNeeded: function(dist) {
         if (dist < 0) return dist;
         var fuelNeeded = parms.ship.minFuelToJump + parms.ship.jumpFuelRatio * dist;
         return fuelNeeded;
     },
+
 
     // Fill in any computed values the ship needs to have.
     init: function() {

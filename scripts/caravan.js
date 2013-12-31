@@ -76,3 +76,30 @@ function randDist() {
 function fatalError(message) {
     throw("Fatal error: " + message);
 }
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Shortcut to get an element by ID.
+function elm(id) {
+    var e = document.getElementById(id);
+    if (!e) throw('No element "' + id + '"');
+    return e;
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Add zeros before a number to make it a certain width;
+function zpad(n, w) {
+    return padl(n, w, '0');
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Pad a string to a given width.
+function padl(n, w, c) {
+    n = String(n);
+    w = w || 2;
+    c = c || ' ';
+    while (n.length < w) n = c + n;
+    return n;
+}

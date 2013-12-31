@@ -20,11 +20,6 @@ var Map = {
         return exit.dist;
     },
 
-    canJumpBetween: function (fromWn, toWn) {
-        var fw = Map.getWorld(fromWn);
-        var exit = World.getExitTo(fw, toWn);
-    },
-
     addWorld: function(fromWorldNum, name) {
         var newWorldNum = Map.getNumWorlds();
         name = name || ('Planet ' + newWorldNum);
@@ -48,7 +43,7 @@ var Map = {
 
         // Fill in one or more exits.
         var numExits = randDist(parms.world.numExitsProb);
-        if (typeof forcedNumExits === 'number') numExits = forcedNumExits;
+        if (typeof forcedNumExits === 'number') numExits = forcedNumExits; console.log(numExits);
         for (var exitNum = 0; exitNum < numExits; exitNum++)
             Map.addWorld(fromWorldNum);
     },

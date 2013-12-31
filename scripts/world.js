@@ -25,17 +25,22 @@ var World = {
         return w;
     },
 
+
     // Get a product sold by a world.
     getProd: function(w, p) {
         return w.market[p];
     },
 
+
     // Get the exit from this world to the next.
     getExitTo: function(w, wn) {
-        for (var e = 0; e < w.exits.length; e++)
-            if (e.worldNum == wn) return w.exits[e];
+        for (var e = 0; e < w.exits.length; e++) {
+            var exit = w.exits[e];
+            if (exit != konst.NO_EXIT && exit.worldNum == wn) return w.exits[e];
+        }
         return konst.NO_EXIT;
     },
+
 
     // Add an exit from this world to another.
     addExitTo: function(w, wn, d) {
