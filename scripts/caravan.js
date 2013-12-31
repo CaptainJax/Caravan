@@ -21,6 +21,7 @@ $(window).load(function() { // All assets must be loaded.
     parms.init();   // The parameters controlling the game.
     map.init();      // The map of planets.
     ship.init();     // The player's ship;
+    ship.jumpToWorld(0); // Initial location.
     //loadGame(); // Get saved state, or just use what we have now.
 });
 
@@ -49,7 +50,7 @@ function saveGame() {
     var state = {'parms':parms, 'ship':ship, 'map':map};
     var stateStr = JSON.stringify(state);
     localStorage.caravanState = stateStr;
-} 
+}
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -75,6 +76,3 @@ function randDist() {
 function fatalError(message) {
     throw("Fatal error: " + message);
 }
-
-
-
