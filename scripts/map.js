@@ -20,7 +20,7 @@ var Map = {
         return exit.dist;
     },
 
-    canJumpBewteen: function (fromWn, toWn) {
+    canJumpBetween: function (fromWn, toWn) {
         var fw = Map.getWorld(fromWn);
         //var connected =
     },

@@ -19,9 +19,9 @@ var konst = {
 // Initialize the globals.
 $(window).load(function() { // All assets must be loaded.
     parms.init();   // The parameters controlling the game.
-    map.init();      // The map of planets.
-    ship.init();     // The player's ship;
-    ship.jumpToWorld(0); // Initial location.
+    Map.init();      // The map of planets.
+    Ship.init();     // The player's ship;
+    Ship.jumpTo(0); // Initial location.
     //loadGame(); // Get saved state, or just use what we have now.
 });
 
